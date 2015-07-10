@@ -1,0 +1,322 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* product_spare_parts
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20130804-231043\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-07 16:12+0000\n"
+"PO-Revision-Date: 2014-02-07 16:12+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product_spare_parts
+#: selection:product.product,spare_parts_creation_policy:0
+msgid "While ordering"
+msgstr "A la commande"
+
+#. module: product_spare_parts
+#: selection:product.product,spare_parts_creation_policy:0
+msgid "While delivering"
+msgstr "A la livraison"
+
+#. module: product_spare_parts
+#: model:ir.actions.act_window,name:product_spare_parts.action_view_product_spare_parts_form
+#: model:ir.ui.menu,name:product_spare_parts.menu_view_product_spare_parts_form
+msgid "Product spare parts list"
+msgstr "Liste des pièces détachées"
+
+#. module: product_spare_parts
+#: selection:product.product,spare_parts_pricing_policy:0
+msgid "Standart method"
+msgstr "Méthode standard"
+
+#. module: product_spare_parts
+#: view:product.product:0
+msgid "As spare parts for"
+msgstr "En tant que pièce détachée pour"
+
+#. module: product_spare_parts
+#: field:product.spare.part,product_parent_id:0
+msgid "Parent product"
+msgstr "Produit parent"
+
+#. module: product_spare_parts
+#: view:product.spare.part:0
+msgid "Product spare parts"
+msgstr "Pièce détachée"
+
+#. module: product_spare_parts
+#: field:product.spare.part,price_total:0
+#: field:product.spare.part,price_unit:0
+msgid "Custom price"
+msgstr "Prix personnalisé"
+
+#. module: product_spare_parts
+#: selection:product.product,spare_parts_pricing_policy:0
+msgid "Add price and zeroing"
+msgstr "Ajout du prix et remise à zéro"
+
+#. module: product_spare_parts
+#: code:addons/product_spare_parts/product.py:122
+#: help:product.product,spare_parts_pricing_policy:0
+#, python-format
+msgid "Spare parts pricing methods :\n"
+"    * Add price and zeroing: The sum of spare parts will be added to the final price and zeroing.\n"
+"    * Included and zeroing: The sum of spare parts will not be added to the final price and zeroing.\n"
+"    * Standart method: Do nothing more than the standard function. The sum of spare parts will not be added to the final price and zeroing.\n"
+"            "
+msgstr "Méthode de recalcul du prix :\n"
+"    * Ajout du prix et remise à zéro: Le prix de chaque pièces détachées sera ajouter au prix total puis remis à zéro.\n"
+"    * Inclu avec remise à zéro: Le prix de chaque pièces détachées sera remis à zéro sans modification du prix final.\n"
+"    * Méthode standard: Un prix par ligne.\n"
+"            "
+
+#. module: product_spare_parts
+#: code:addons/product_spare_parts/stock.py:196
+#, python-format
+msgid "You are trying to delete a child move, try deleting parent first. Or configure the parent product to allow individual spare part deletion."
+msgstr "Vous essayez de supprimer une pièce détachée. Supprimez d'abord le produit parent ou activez l'option de suppression des pièces détachées dans la fiche du produit parent."
+
+#. module: product_spare_parts
+#: field:sale.order.line,parent_right:0
+#: field:stock.move,parent_right:0
+msgid "Right Parent"
+msgstr "Parent de droite"
+
+#. module: product_spare_parts
+#: field:product.product,ondelete_cascade_ok:0
+msgid "While unlinking, also unlink spare parts"
+msgstr "Lors d'une suppression, supprimer également les pièces détachées"
+
+#. module: product_spare_parts
+#: field:product.spare.part,qty_available:0
+msgid "Quantity On Hand"
+msgstr "Quantité disponible"
+
+#. module: product_spare_parts
+#: model:ir.model,name:product_spare_parts.model_product_product
+#: field:product.spare.part,product_id:0
+msgid "Product"
+msgstr "Article"
+
+#. module: product_spare_parts
+#: code:addons/product_spare_parts/product.py:247
+#, python-format
+msgid "Error !"
+msgstr "Erreur !"
+
+#. module: product_spare_parts
+#: field:sale.order.line,parent_id:0
+#: field:stock.move,parent_id:0
+msgid "Parent"
+msgstr "Parent"
+
+#. module: product_spare_parts
+#: field:product.spare.part,product_uom_qty:0
+msgid "Quantity (UoM)"
+msgstr "Quantité (UdM)"
+
+#. module: product_spare_parts
+#: view:product.product:0
+#: field:product.spare.part,product_cost:0
+msgid "Price"
+msgstr "Prix"
+
+#. module: product_spare_parts
+#: code:addons/product_spare_parts/sale.py:290
+#, python-format
+msgid "You are trying to delete a child line, try deleting parent first. Or configure the parent product to allow individual spare part deletion."
+msgstr "Vous essayez de supprimer une pièce détachée. Supprimez d'abord le produit parent ou activez l'option de suppression des pièces détachées dans la fiche du produit parent."
+
+#. module: product_spare_parts
+#: help:product.product,description_spare_parts:0
+msgid "Injected into the sale order line note when creating spare parts into the pîcking"
+msgstr "Injecté dans la note de la ligne de vente quand les créations de pièces détachées se font sur la base des préparations"
+
+#. module: product_spare_parts
+#: code:addons/product_spare_parts/sale.py:114
+#: constraint:sale.order.line:0
+#, python-format
+msgid "Error ! You cannot create recursive order lines."
+msgstr "Erreur ! Vous ne pouvez pas créer de ligne de vente à hiérarchie récursive."
+
+#. module: product_spare_parts
+#: field:product.product,product_parent_ids:0
+msgid "Parent products"
+msgstr "Produits parent"
+
+#. module: product_spare_parts
+#: field:product.spare.part,product_uom_id:0
+msgid "Unit of Measure"
+msgstr "Unité de mesure"
+
+#. module: product_spare_parts
+#: selection:product.product,spare_parts_pricing_policy:0
+msgid "Price included and zeroing"
+msgstr "Inclu avec remise à zéro"
+
+#. module: product_spare_parts
+#: view:product.product:0
+#: field:product.product,spare_part_ids:0
+msgid "Spare parts"
+msgstr "Pièces détachées"
+
+#. module: product_spare_parts
+#: view:product.product:0
+msgid "Spare parts included"
+msgstr "Pièces détachées incluses"
+
+#. module: product_spare_parts
+#: code:addons/product_spare_parts/product.py:115
+#: field:product.product,spare_parts_pricing_policy:0
+#, python-format
+msgid "Spare parts pricing policy"
+msgstr "Politique des prix"
+
+#. module: product_spare_parts
+#: help:product.product,ondelete_cascade_ok:0
+msgid "While unlinking, also unlink all associated spare parts."
+msgstr "Lors d'une suppression, supprimer également tous les pièces détachées."
+
+#. module: product_spare_parts
+#: help:product.product,spare_parts_deletion_ok:0
+msgid "With this option you're allowed to unlink a product line either while being a spare part."
+msgstr "Avec cette option, la suppression des lignes de ventes de pièces détachées est autorisée."
+
+#. module: product_spare_parts
+#: code:addons/product_spare_parts/product.py:73
+#: field:product.spare.part,product_uos_id:0
+#, python-format
+msgid "Product UoS"
+msgstr "Unité secondaire du produit"
+
+#. module: product_spare_parts
+#: view:product.spare.part:0
+msgid "Pièce détachée comprise dans"
+msgstr "Pièce détachée comprise dans"
+
+#. module: product_spare_parts
+#: view:product.product:0
+msgid "Spare parts List"
+msgstr "Liste des pièces détachées"
+
+#. module: product_spare_parts
+#: view:product.product:0
+msgid "Costs"
+msgstr "Coûts"
+
+#. module: product_spare_parts
+#: field:product.product,spare_parts_deletion_ok:0
+msgid "Allow individual spare part deletion"
+msgstr "Autoriser la suppression individuelle des pièces détachées."
+
+#. module: product_spare_parts
+#: view:product.product:0
+#: field:product.product,description_spare_parts:0
+msgid "Spare parts description"
+msgstr "Description des pièces détachées"
+
+#. module: product_spare_parts
+#: field:product.spare.part,ref:0
+msgid "Internal reference"
+msgstr "Référence interne"
+
+#. module: product_spare_parts
+#: code:addons/product_spare_parts/sale.py:289
+#: code:addons/product_spare_parts/stock.py:195
+#, python-format
+msgid "Warning !"
+msgstr "Attention !"
+
+#. module: product_spare_parts
+#: code:addons/product_spare_parts/stock.py:90
+#: constraint:stock.move:0
+#, python-format
+msgid "Error ! You cannot create recursive moves."
+msgstr "Erreur ! Vous ne pouvez pas créer de mouvements récursifs."
+
+#. module: product_spare_parts
+#: field:sale.order.line,parent_left:0
+#: field:stock.move,parent_left:0
+msgid "Left Parent"
+msgstr "Parent de gauche"
+
+#. module: product_spare_parts
+#: field:sale.order.line,child_id:0
+#: field:stock.move,child_id:0
+msgid "Childs"
+msgstr "Pièces détachées"
+
+#. module: product_spare_parts
+#: field:stock.move,sequence:0
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: product_spare_parts
+#: code:addons/product_spare_parts/product.py:149
+#: field:product.product,spare_parts_creation_policy:0
+#, python-format
+msgid "Spare parts creation policy"
+msgstr "Politique de création des pièces détachées"
+
+#. module: product_spare_parts
+#: view:product.product:0
+msgid "Sales"
+msgstr "Ventes"
+
+#. module: product_spare_parts
+#: view:product.product:0
+msgid "Qty"
+msgstr "Qté"
+
+#. module: product_spare_parts
+#: field:product.spare.part,product_price:0
+msgid "Cost"
+msgstr "Coût"
+
+#. module: product_spare_parts
+#: code:addons/product_spare_parts/product.py:248
+#, python-format
+msgid "You try to create a recursive spare part, which is not possible !"
+msgstr "Vous essayez de créer une pîèce détachée récursive, cela n'est pas possible !"
+
+#. module: product_spare_parts
+#: help:product.product,spare_parts_creation_policy:0
+msgid "Allow you to choose the place where spare parts will be created  :\n"
+"* While ordering: Spare parts will be created at sale order line creation (Only if relied to a sale order).\n"
+"* While delivering: Spare parts will be created at stock move creation (Only if relied to a picking)."
+msgstr "Vous autorise à choisir le moment de création des pièces détachées :\n"
+"* A la commande: Les pièces détachées seront créés dans la commande.\n"
+"* A la livraison: Les pièces détachées seront créés dans la préparation."
+
+#. module: product_spare_parts
+#: help:stock.move,sequence:0
+msgid "Gives the sequence order when displaying a list of stock moves."
+msgstr "Donnez un ordre de sequence dans les listes de mouvements."
+
+#. module: product_spare_parts
+#: model:ir.model,name:product_spare_parts.model_product_spare_part
+msgid "Product spare parts association table"
+msgstr "Table d'association des pièces détachées et des produits"
+
+#. module: product_spare_parts
+#: model:ir.model,name:product_spare_parts.model_stock_move
+msgid "Stock Move"
+msgstr "Mouvement de stock"
+
+#. module: product_spare_parts
+#: field:product.spare.part,product_uos_qty:0
+msgid "Quantity (UoS)"
+msgstr "Quantité secondaire"
+
+#. module: product_spare_parts
+#: model:ir.model,name:product_spare_parts.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Ligne de commandes de vente"
+
