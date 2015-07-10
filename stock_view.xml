@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+<!--
+=======================
+stock.move
+=======================
+-->
+
+        <record id="view_move_form" model="ir.ui.view">
+            <field name="name">stock.move.form</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_form"/>
+            <field eval="4" name="priority"/>
+            <field name="arch" type="xml">
+                <group string="Origin" position="after">
+                    <group string="Associated moves">
+                        <field name="parent_id"/>
+                        <field name="child_id" colspan="4" nolabel="1"/>
+                    </group>
+                </group>
+            </field>
+        </record>
+
+<!--
+=======================
+stock.picking
+=======================
+-->
+        <!--record id="view_picking_form" model="ir.ui.view">
+            <field name="name">stock.picking.form</field>
+            <field name="model">stock.picking</field>
+            <field eval="12" name="priority"/>
+            <field name="arch" type="xml">
+                <form string="Internal Picking List">
+                    <notebook colspan="4">
+                        <page string="Products">
+                            <field colspan="4" name="move_lines" nolabel="1" widget="one2many_list" context="{'address_in_id': address_id}">
+            </field>
+        </record>
+
+        <record id="view_picking_out_form" model="ir.ui.view">
+            <field name="name">stock.picking.out.form</field>
+            <field name="model">stock.picking</field>
+            <field name="arch" type="xml">
+                <form string="Delivery Orders">
+                    <notebook colspan="4">
+                        <page string="Products">
+                            <field colspan="4" name="move_lines" nolabel="1" widget="one2many_list" context="{'address_out_id': address_id, 'picking_type': type}" >
+            </field>
+        </record>
+
+        <record id="view_picking_in_form" model="ir.ui.view">
+            <field name="name">stock.picking.in.form</field>
+            <field name="model">stock.picking</field>
+            <field name="arch" type="xml">
+                <form string="Input Picking List">
+                    <notebook colspan="4">
+                        <page string="General Information">
+                            <field colspan="4" name="move_lines" nolabel="1" widget="one2many_list" context="{'address_in_id': address_id, 'picking_type': type}" >
+            </field>
+        </record-->
+
+    </data>
+</openerp>
