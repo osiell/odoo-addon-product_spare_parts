@@ -16,7 +16,7 @@ product.spare.parts
                         <label for="product_id" class="oe_edit_only"/>
                         <h2><field name="product_id"/></h2>
                         <div>
-                            Pièce détachée comprise dans <field name="product_parent_id" colspan="2"/>
+                            As part of <field name="product_parent_id" colspan="2"/>
                         </div>
                         <group>
                             <group>
@@ -116,7 +116,7 @@ product.product
                                 <field name="spare_parts_deletion_ok" />
                             </group>
                         </group>
-                        <group name="relations">
+                        <group name="relations" colspan="4">
                             <group name="childs" colspan="4">
                                 <separator string="Spare parts included" colspan="4"/>
                                 <field name="spare_part_ids" colspan="4" nolabel="1"

@@ -1,6 +1,6 @@
 # Translation of OpenERP Server.
 # This file contains the translation of the following modules:
-#	* osiell_product_spare_parts
+#	* product_spare_parts
 #
 msgid ""
 msgstr ""
@@ -15,55 +15,55 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: selection:product.product,spare_parts_creation_policy:0
 msgid "While ordering"
 msgstr "A la commande"
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: selection:product.product,spare_parts_creation_policy:0
 msgid "While delivering"
 msgstr "A la livraison"
 
-#. module: osiell_product_spare_parts
-#: model:ir.actions.act_window,name:osiell_product_spare_parts.action_view_product_spare_parts_form
-#: model:ir.ui.menu,name:osiell_product_spare_parts.menu_view_product_spare_parts_form
+#. module: product_spare_parts
+#: model:ir.actions.act_window,name:product_spare_parts.action_view_product_spare_parts_form
+#: model:ir.ui.menu,name:product_spare_parts.menu_view_product_spare_parts_form
 msgid "Product spare parts list"
-msgstr "Liste des pièces détachées"
+msgstr "Liste des produits associés"
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: selection:product.product,spare_parts_pricing_policy:0
 msgid "Standart method"
 msgstr "Méthode standard"
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: view:product.product:0
 msgid "As spare parts for"
-msgstr "En tant que pièce détachée pour"
+msgstr "En tant que produit associé pour"
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: field:product.spare.part,product_parent_id:0
 msgid "Parent product"
 msgstr "Produit parent"
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: view:product.spare.part:0
 msgid "Product spare parts"
-msgstr "Pièce détachée"
+msgstr "Produit associé"
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: field:product.spare.part,price_total:0
 #: field:product.spare.part,price_unit:0
 msgid "Custom price"
 msgstr "Prix personnalisé"
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: selection:product.product,spare_parts_pricing_policy:0
-msgid "Add price and zeroing"
-msgstr "Ajout du prix et remise à zéro"
+msgid "Dynamic package"
+msgstr "Forfait dynamique"
 
-#. module: osiell_product_spare_parts
-#: code:addons/osiell_product_spare_parts/product.py:122
+#. module: product_spare_parts
+#: code:addons/product_spare_parts/product.py:122
 #: help:product.product,spare_parts_pricing_policy:0
 #, python-format
 msgid "Spare parts pricing methods :\n"
@@ -72,251 +72,251 @@ msgid "Spare parts pricing methods :\n"
 "    * Standart method: Do nothing more than the standard function. The sum of spare parts will not be added to the final price and zeroing.\n"
 "            "
 msgstr "Méthode de recalcul du prix :\n"
-"    * Ajout du prix et remise à zéro: Le prix de chaque pièces détachées sera ajouter au prix total puis remis à zéro.\n"
-"    * Inclu avec remise à zéro: Le prix de chaque pièces détachées sera remis à zéro sans modification du prix final.\n"
+"    * Ajout du prix et remise à zéro: Le prix de chaque produit associé sera ajouter au prix total puis remis à zéro.\n"
+"    * Inclu avec remise à zéro: Le prix de chaque produit associé sera remis à zéro sans modification du prix final.\n"
 "    * Méthode standard: Un prix par ligne.\n"
 "            "
 
-#. module: osiell_product_spare_parts
-#: code:addons/osiell_product_spare_parts/stock.py:196
+#. module: product_spare_parts
+#: code:addons/product_spare_parts/stock.py:196
 #, python-format
 msgid "You are trying to delete a child move, try deleting parent first. Or configure the parent product to allow individual spare part deletion."
-msgstr "Vous essayez de supprimer une pièce détachée. Supprimez d'abord le produit parent ou activez l'option de suppression des pièces détachées dans la fiche du produit parent."
+msgstr "Vous essayez de supprimer un produit associé. Supprimez d'abord le produit parent ou activez l'option de suppression des produits associés dans la fiche du produit parent."
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: field:sale.order.line,parent_right:0
 #: field:stock.move,parent_right:0
 msgid "Right Parent"
 msgstr "Parent de droite"
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: field:product.product,ondelete_cascade_ok:0
 msgid "While unlinking, also unlink spare parts"
-msgstr "Lors d'une suppression, supprimer également les pièces détachées"
+msgstr "Lors d'une suppression, supprimer également les produits associés"
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: field:product.spare.part,qty_available:0
 msgid "Quantity On Hand"
 msgstr "Quantité disponible"
 
-#. module: osiell_product_spare_parts
-#: model:ir.model,name:osiell_product_spare_parts.model_product_product
+#. module: product_spare_parts
+#: model:ir.model,name:product_spare_parts.model_product_product
 #: field:product.spare.part,product_id:0
 msgid "Product"
 msgstr "Article"
 
-#. module: osiell_product_spare_parts
-#: code:addons/osiell_product_spare_parts/product.py:247
+#. module: product_spare_parts
+#: code:addons/product_spare_parts/product.py:247
 #, python-format
 msgid "Error !"
 msgstr "Erreur !"
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: field:sale.order.line,parent_id:0
 #: field:stock.move,parent_id:0
 msgid "Parent"
 msgstr "Parent"
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: field:product.spare.part,product_uom_qty:0
 msgid "Quantity (UoM)"
 msgstr "Quantité (UdM)"
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: view:product.product:0
 #: field:product.spare.part,product_cost:0
 msgid "Price"
 msgstr "Prix"
 
-#. module: osiell_product_spare_parts
-#: code:addons/osiell_product_spare_parts/sale.py:290
+#. module: product_spare_parts
+#: code:addons/product_spare_parts/sale.py:290
 #, python-format
 msgid "You are trying to delete a child line, try deleting parent first. Or configure the parent product to allow individual spare part deletion."
-msgstr "Vous essayez de supprimer une pièce détachée. Supprimez d'abord le produit parent ou activez l'option de suppression des pièces détachées dans la fiche du produit parent."
+msgstr "Vous essayez de supprimer un produit associé. Supprimez d'abord le produit parent ou activez l'option de suppression des produits associés dans la fiche du produit parent."
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: help:product.product,description_spare_parts:0
 msgid "Injected into the sale order line note when creating spare parts into the pîcking"
-msgstr "Injecté dans la note de la ligne de vente quand les créations de pièces détachées se font sur la base des préparations"
+msgstr "Injecté dans la note de la ligne de vente quand les créations de produits associés se font sur la base des préparations"
 
-#. module: osiell_product_spare_parts
-#: code:addons/osiell_product_spare_parts/sale.py:114
+#. module: product_spare_parts
+#: code:addons/product_spare_parts/sale.py:114
 #: constraint:sale.order.line:0
 #, python-format
 msgid "Error ! You cannot create recursive order lines."
 msgstr "Erreur ! Vous ne pouvez pas créer de ligne de vente à hiérarchie récursive."
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: field:product.product,product_parent_ids:0
 msgid "Parent products"
 msgstr "Produits parent"
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: field:product.spare.part,product_uom_id:0
 msgid "Unit of Measure"
 msgstr "Unité de mesure"
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: selection:product.product,spare_parts_pricing_policy:0
-msgid "Price included and zeroing"
-msgstr "Inclu avec remise à zéro"
+msgid "Fixed package"
+msgstr "Forfait fixe"
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: view:product.product:0
 #: field:product.product,spare_part_ids:0
 msgid "Spare parts"
-msgstr "Pièces détachées"
+msgstr "Produits associés"
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: view:product.product:0
 msgid "Spare parts included"
-msgstr "Pièces détachées incluses"
+msgstr "Produits associés inclus"
 
-#. module: osiell_product_spare_parts
-#: code:addons/osiell_product_spare_parts/product.py:115
+#. module: product_spare_parts
+#: code:addons/product_spare_parts/product.py:115
 #: field:product.product,spare_parts_pricing_policy:0
 #, python-format
 msgid "Spare parts pricing policy"
 msgstr "Politique des prix"
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: help:product.product,ondelete_cascade_ok:0
 msgid "While unlinking, also unlink all associated spare parts."
-msgstr "Lors d'une suppression, supprimer également tous les pièces détachées."
+msgstr "Lors d'une suppression, supprimer également tous les produits associés."
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: help:product.product,spare_parts_deletion_ok:0
 msgid "With this option you're allowed to unlink a product line either while being a spare part."
-msgstr "Avec cette option, la suppression des lignes de ventes de pièces détachées est autorisée."
+msgstr "Avec cette option, la suppression des lignes de ventes de produit associé est autorisée."
 
-#. module: osiell_product_spare_parts
-#: code:addons/osiell_product_spare_parts/product.py:73
+#. module: product_spare_parts
+#: code:addons/product_spare_parts/product.py:73
 #: field:product.spare.part,product_uos_id:0
 #, python-format
 msgid "Product UoS"
 msgstr "Unité secondaire du produit"
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: view:product.spare.part:0
-msgid "Pièce détachée comprise dans"
-msgstr "Pièce détachée comprise dans"
+msgid "As part of"
+msgstr "Produit associé compris dans"
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: view:product.product:0
 msgid "Spare parts List"
-msgstr "Liste des pièces détachées"
+msgstr "Liste des produits associés"
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: view:product.product:0
 msgid "Costs"
 msgstr "Coûts"
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: field:product.product,spare_parts_deletion_ok:0
 msgid "Allow individual spare part deletion"
-msgstr "Autoriser la suppression individuelle des pièces détachées."
+msgstr "Autoriser la suppression individuelle des produits associés."
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: view:product.product:0
 #: field:product.product,description_spare_parts:0
 msgid "Spare parts description"
-msgstr "Description des pièces détachées"
+msgstr "Description des produits associés"
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: field:product.spare.part,ref:0
 msgid "Internal reference"
 msgstr "Référence interne"
 
-#. module: osiell_product_spare_parts
-#: code:addons/osiell_product_spare_parts/sale.py:289
-#: code:addons/osiell_product_spare_parts/stock.py:195
+#. module: product_spare_parts
+#: code:addons/product_spare_parts/sale.py:289
+#: code:addons/product_spare_parts/stock.py:195
 #, python-format
 msgid "Warning !"
 msgstr "Attention !"
 
-#. module: osiell_product_spare_parts
-#: code:addons/osiell_product_spare_parts/stock.py:90
+#. module: product_spare_parts
+#: code:addons/product_spare_parts/stock.py:90
 #: constraint:stock.move:0
 #, python-format
 msgid "Error ! You cannot create recursive moves."
 msgstr "Erreur ! Vous ne pouvez pas créer de mouvements récursifs."
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: field:sale.order.line,parent_left:0
 #: field:stock.move,parent_left:0
 msgid "Left Parent"
 msgstr "Parent de gauche"
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: field:sale.order.line,child_id:0
 #: field:stock.move,child_id:0
 msgid "Childs"
-msgstr "Pièces détachées"
+msgstr "Produits associés"
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: field:stock.move,sequence:0
 msgid "Sequence"
 msgstr "Séquence"
 
-#. module: osiell_product_spare_parts
-#: code:addons/osiell_product_spare_parts/product.py:149
+#. module: product_spare_parts
+#: code:addons/product_spare_parts/product.py:149
 #: field:product.product,spare_parts_creation_policy:0
 #, python-format
 msgid "Spare parts creation policy"
-msgstr "Politique de création des pièces détachées"
+msgstr "Politique de création des produits associés"
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: view:product.product:0
 msgid "Sales"
 msgstr "Ventes"
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: view:product.product:0
 msgid "Qty"
 msgstr "Qté"
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: field:product.spare.part,product_price:0
 msgid "Cost"
 msgstr "Coût"
 
-#. module: osiell_product_spare_parts
-#: code:addons/osiell_product_spare_parts/product.py:248
+#. module: product_spare_parts
+#: code:addons/product_spare_parts/product.py:248
 #, python-format
 msgid "You try to create a recursive spare part, which is not possible !"
-msgstr "Vous essayez de créer une pîèce détachée récursive, cela n'est pas possible !"
+msgstr "Vous essayez de créer un produit associé récursive, cela n'est pas possible !"
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: help:product.product,spare_parts_creation_policy:0
 msgid "Allow you to choose the place where spare parts will be created  :\n"
 "* While ordering: Spare parts will be created at sale order line creation (Only if relied to a sale order).\n"
 "* While delivering: Spare parts will be created at stock move creation (Only if relied to a picking)."
-msgstr "Vous autorise à choisir le moment de création des pièces détachées :\n"
-"* A la commande: Les pièces détachées seront créés dans la commande.\n"
-"* A la livraison: Les pièces détachées seront créés dans la préparation."
+msgstr "Vous autorise à choisir le moment de création des produits associés :\n"
+"* A la commande: Les produits associés seront créés dans la commande.\n"
+"* A la livraison: Les produits associés seront créés dans la préparation."
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: help:stock.move,sequence:0
 msgid "Gives the sequence order when displaying a list of stock moves."
 msgstr "Donnez un ordre de sequence dans les listes de mouvements."
 
-#. module: osiell_product_spare_parts
-#: model:ir.model,name:osiell_product_spare_parts.model_product_spare_part
+#. module: product_spare_parts
+#: model:ir.model,name:product_spare_parts.model_product_spare_part
 msgid "Product spare parts association table"
-msgstr "Table d'association des pièces détachées et des produits"
+msgstr "Table d'association des produits associés et des produits"
 
-#. module: osiell_product_spare_parts
-#: model:ir.model,name:osiell_product_spare_parts.model_stock_move
+#. module: product_spare_parts
+#: model:ir.model,name:product_spare_parts.model_stock_move
 msgid "Stock Move"
 msgstr "Mouvement de stock"
 
-#. module: osiell_product_spare_parts
+#. module: product_spare_parts
 #: field:product.spare.part,product_uos_qty:0
 msgid "Quantity (UoS)"
 msgstr "Quantité secondaire"
 
-#. module: osiell_product_spare_parts
-#: model:ir.model,name:osiell_product_spare_parts.model_sale_order_line
+#. module: product_spare_parts
+#: model:ir.model,name:product_spare_parts.model_sale_order_line
 msgid "Sales Order Line"
 msgstr "Ligne de commandes de vente"
 

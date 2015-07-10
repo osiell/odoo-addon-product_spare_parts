@@ -22,8 +22,8 @@
 # $Id$
 # $Revision$
 
-from osv import fields, osv
-from tools.translate import _
+from openerp.osv import fields, osv
+from openerp.tools.translate import _
 
 
 class sale_order(osv.osv):
@@ -189,31 +189,6 @@ class sale_order_line(osv.osv):
 
         return True
 
-    def product_id_change(
-            self, cr, uid, ids, pricelist, product, qty=0,
-            uom=False, qty_uos=0, uos=False, name='', partner_id=False,
-            lang=False, update_tax=True, date_order=False, packaging=False,
-            fiscal_position=False, flag=False, context=None):
-        """ Add the produc spare parts dexcription if in order mode
-        """
-        context = context or {}
-        product_obj = self.pool.get('product.product')
-        value = super(sale_order_line, self).product_id_change(
-            cr, uid, ids, pricelist, product, qty=qty,
-            uom=uom, qty_uos=qty_uos, uos=uos, name=name, partner_id=partner_id,
-            lang=lang, update_tax=update_tax, date_order=date_order,
-            packaging=packaging, fiscal_position=fiscal_position, flag=flag,
-            context=context)
-        result = value['value']
-        if not product:
-            return value
-        product = product_obj.browse(cr, uid, product, context=context)
-        spare_parts_creation_policy = product.spare_parts_creation_policy
-        if spare_parts_creation_policy == 'picking':
-            result['name'] = result['name'] + "\n" + product.description_spare_parts
-            value['value'].update(result)
-        return value
-
     def create(self, cr, uid, vals, context=None):
         """ Changes from original method:
 
@@ -223,9 +198,9 @@ class sale_order_line(osv.osv):
         Manage hierarchical copy to keep right relation the newly created order
 
         """
-        context = context or {}
+        if context is None:
+            context = {}
         order_obj = self.pool.get('sale.order')
-        product_obj = self.pool.get('product.product')
         context['create_seen'] = True
         order_line_id = super(sale_order_line, self).create(
             cr, uid, vals, context=context)
@@ -255,6 +230,12 @@ class sale_order_line(osv.osv):
                     })
                 # Add spare parts
                 self.add_spare_parts(cr, uid, [order_line_id], context=context)
+            else:
+                if not order_line.name.count(product.description_spare_parts):
+                    new_name = order_line.name + "\n" + product.description_spare_parts
+                    self.write(cr, uid, [order_line_id], {
+                        'name': new_name,
+                    }, context=context)
 
         # Keep same order id throught sale order line relation
         line = self.browse(cr, uid, order_line_id, context=context)

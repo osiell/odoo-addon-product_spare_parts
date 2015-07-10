@@ -22,8 +22,8 @@
 # $Id$
 # $Revision$
 
-from osv import fields, osv
-from tools.translate import _
+from openerp.osv import fields, osv
+from openerp.tools.translate import _
 
 class stock_picking(osv.osv):
 
@@ -170,7 +170,7 @@ class stock_move(osv.osv):
     def create(self, cr, uid, vals, context=None):
         """ Changes from original method:
 
-        20120729 - Create each order lines relative to the product's spare parts
+        - Create each order lines relative to the product's spare parts
             relative to the current sale order line creation
 
         """
@@ -208,7 +208,7 @@ class stock_move(osv.osv):
 
         # Keep same order id throught move relation
         move = self.browse(cr, uid, move_id, context=context)
-        sub_move = move
+        sub_move = line
         while sub_move:
             picking_id = sub_move.picking_id.id
             sub_move = sub_move.parent_id

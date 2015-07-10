@@ -14,9 +14,9 @@ stock.move
             <field name="inherit_id" ref="stock.view_move_form"/>
             <field eval="4" name="priority"/>
             <field name="arch" type="xml">
-                <group string="Origin" position="after">
-                    <group string="Associated moves">
-                        <field name="parent_id"/>
+                <group name="quants_grp" position="after">
+                    <group string="Associated moves" colspan="4">
+                        <field name="parent_id" colspan="4"/>
                         <field name="child_id" colspan="4" nolabel="1"/>
                     </group>
                 </group>

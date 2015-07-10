@@ -22,9 +22,9 @@
 # $Id$
 # $Revision$
 
-from osv import fields, osv
-import decimal_precision as dp
-from tools.translate import _
+from openerp.osv import fields, osv
+from openerp.tools.translate import _
+import openerp.addons.decimal_precision as dp
 
 
 class product_spare_part(osv.osv):
@@ -35,28 +35,45 @@ class product_spare_part(osv.osv):
     def _get_uom_id(self, cr, uid, *args):
         return self.pool.get('sale.order.line')._get_uom_id(cr, uid, *args)
 
-    def function_price_total(self, cr, uid, ids, fields, args, context=None):
+    def onchange_product_id(self, cr, uid, ids, product_id, product_qty, context=None):
         """ Return some product properties
 
         """
         if context is None:
             context = {}
         res = {}
-        for spare in self.browse(cr, uid, ids, context=context):
-            res[spare.id] = spare.product_price * spare.product_uom_qty
+        product_obj = self.pool.get('product.product')
+        product = product_obj.browse(cr, uid, product_id, context=context)
+        res['value'] = {
+            'price_unit': product.lst_price,
+            'price_total': product.lst_price * product_qty,
+        }
+        return res
+
+    def onchange_price_unit(self, cr, uid, ids, price_unit, product_qty, context=None):
+        """ Return some product properties
+
+        """
+        if context is None:
+            context = {}
+        res = {}
+        product_obj = self.pool.get('product.product')
+        product = product_obj.browse(cr, uid, product_id, context=context)
+        res['value'] = {
+            'price_unit': product.lst_price,
+            'price_total': product.lst_price * product_qty,
+        }
         return res
 
     _columns = {
         'ref': fields.related(
-            'product_id', 'code', string="Internal reference", type="char",
-            readonly=True),
+            'product_id', 'code', string="Internal reference", type="char"),
         'qty_available': fields.related(
-            'product_id', 'qty_available', string="Quantity On Hand",
-            readonly=True),
+            'product_id', 'qty_available', string="Quantity On Hand"),
         'product_cost': fields.related(
-            'product_id', 'list_price', string="Price", readonly=True),
+            'product_id', 'list_price', string="Price"),
         'product_price': fields.related(
-            'product_id', 'standard_price', string="Cost", readonly=True),
+            'product_id', 'standard_price', string="Cost"),
         'product_id': fields.many2one(
             'product.product', string='Product', required=True),
         'product_parent_id': fields.many2one(
@@ -73,8 +90,9 @@ class product_spare_part(osv.osv):
         'product_uos_id': fields.related(
             'product_id', 'uos_id', type='many2one', obj='product.uom',
             string=_('Product UoS'), readonly=True),
-        'price_total': fields.function(function_price_total,
-            string="Total price", digits=(16,3)),
+        'price_unit': fields.float(string="Custom price", digits=(16,3)),
+        'price_total': fields.float(
+            string="Custom price", digits=(16,3), readonly=True),
     }
 
     _rec_name = 'product_id'
@@ -92,7 +110,7 @@ class product_product(osv.osv):
     _inherit = "product.product"
 
     def _get_parent_product(self, cr, uid, ids, field_name, arg, context=None):
-        """ Retourne les produits contenant ces produits en pièces détachées
+        """ Returns related parent products
 
         """
         context = context or {}
@@ -117,8 +135,8 @@ class product_product(osv.osv):
             string='Parent products'),
         'spare_parts_pricing_policy': fields.selection(
             [
-                ('add_zeroing', 'Add price and zeroing'),
-                ('included_zeroing', 'Price included and zeroing'),
+                ('dynamic', 'Dynamic package'),
+                ('fixed', 'Fixed package'),
                 ('normal', 'Standart method'),
             ], string=_("Spare parts pricing policy"),
             attrs={
@@ -240,8 +258,7 @@ Spare parts pricing methods :
         return True
 
     def check_recursive_spare_part(self, cr, uid, id, context=None):
-        """
-            Get all parent hierarchy to check for recursive association
+        """ Get all parent hierarchy to check for recursive association
 
         """
         context = context or {}
